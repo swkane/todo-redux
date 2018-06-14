@@ -7,8 +7,7 @@ import '../App.css';
 class App extends Component {
   state = {
     todos: todoList,
-    text: '',
-    currentTab: 'all'
+    text: ''
   }
 
   // Data Structure of a New Todo (can also view ./todos.json)
