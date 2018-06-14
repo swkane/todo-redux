@@ -42,12 +42,12 @@ class App extends Component {
   }
 
   // checking a todo as complete
-  handleComplete = index => () => this.setState({
-    todos: this.state.todos.map((todo, i) => index === i ? {
-      ...todo,
-      completed: !todo.completed
-    } : todo)
-  });
+  // handleComplete = index => () => this.setState({
+  //   todos: this.state.todos.map((todo, i) => index === i ? {
+  //     ...todo,
+  //     completed: !todo.completed
+  //   } : todo)
+  // });
 
   // deleting a todo
   handleDelete = index => () => this.setState({
@@ -68,13 +68,10 @@ class App extends Component {
 			  </header>
           {/* <!-- This section should be hidden by default and shown when there are todos --> */}
 			  <section className="main">
-          {/* <TodoList todos={this.state.todos} onDelete={this.handleDelete} onCompleted={this.handleComplete} /> */}
           <Switch>
-            <Route exact path="/" render={() => <TodoList filter="all" todos={this.state.todos} onDelete={this.handleDelete} onCompleted={this.handleComplete} />} />
-            <Route exact path="/active" render={() => <TodoList filter="active" todos={this.state.todos.filter( todo => !todo.completed)} onDelete={this.handleDelete} onCompleted={this.handleComplete} />} />
-            <Route exact path="/completed" render={() => <TodoList filter="complete" todos={this.state.todos.filter( todo => todo.completed)} onDelete={this.handleDelete} onCompleted={this.handleComplete} />} />
-            {/* <Route exact path="/" component={TodoList}/>
-            <Route exact path="/" component={TodoList}/> */}
+            <Route exact path="/" render={() => <TodoList filter="all" todos={this.state.todos} onDelete={this.handleDelete} /*onCompleted={this.handleComplete}*/ />} />
+            <Route exact path="/active" render={() => <TodoList filter="active" todos={this.state.todos.filter(todo => !todo.completed)} onDelete={this.handleDelete} /*onCompleted={this.handleComplete}*/ />} />
+            <Route exact path="/completed" render={() => <TodoList filter="complete" todos={this.state.todos.filter( todo => todo.completed)} onDelete={this.handleDelete} /*onCompleted={this.handleComplete}*/ />} />
           </Switch>
 			  </section>
         {/* <!-- This footer should hidden by default and shown when there are todos --> */}

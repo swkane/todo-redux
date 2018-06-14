@@ -22,6 +22,12 @@ export default (state = initialState, action) => {
                         todo
                 )
             }
+        case ADD_TODO:
+            return state;
+        case DELETE_TODO:
+            return state;
+        case CLEAR_COMPLETED:
+            return state;
         default:
             return state;
     }

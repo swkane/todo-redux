@@ -1,15 +1,25 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { markComplete } from '../actions';
+import { withRouter } from 'react-router';
 
-const TodoItem = props => {
-    return (
-        <li className={props.completed ? 'completed' : ''}>
-            <div className="view">
-                <input onChange={props.onCompleted} className="toggle" type="checkbox" checked={props.completed} />
-                <label>{props.text}</label>
-                <button onClick={props.onDelete} className="destroy"></button>
-            </div>
-        </li>
-    );
+
+class TodoItem extends React.Component {
+    onComplete = () => {
+        this.props.dispatch(markComplete(this.props.index));
+    }
+    render() {
+        const { completed, onDelete, text } = this.props;
+        return (
+            <li className={completed ? 'completed' : ''}>
+                <div className="view">
+                    <input onChange={this.onComplete} className="toggle" type="checkbox" checked={completed} />
+                    <label>{text}</label>
+                    <button onClick={onDelete} className="destroy"></button>
+                </div>
+            </li>
+        );
+    }
 }
 
-export default TodoItem;
+export default withRouter(connect()(TodoItem));

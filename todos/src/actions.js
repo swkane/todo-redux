@@ -5,7 +5,7 @@ export const CLEAR_COMPLETED = 'CLEAR_COMPLETED';
 
 export const markComplete = index => ({ 
     type: MARK_COMPLETE,
-    payload: id 
+    payload: index 
 });
 
 export const addTodo = title => ({ 
@@ -15,7 +15,7 @@ export const addTodo = title => ({
 
 export const deleteTodo = index => ({
     type: DELETE_TODO,
-    payload: id
+    payload: index
 });
 
 export const clearCompleted = () => ({
