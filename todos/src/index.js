@@ -14,11 +14,11 @@ const store = createStore(
 );
 
 const Index = () => (
-    <BrowserRouter>
-        <Provider store={store} >
+    <Provider store={store} >
+        <BrowserRouter>
             <App />
-        </Provider>
-    </BrowserRouter>
+        </BrowserRouter>
+    </Provider>
 );
 
 ReactDOM.render(<Index />, document.getElementById('root'));

@@ -7,7 +7,6 @@ import {
 } from './actions';
 
 const initialState = {
-    text: '',
     todos
 }
 
@@ -19,7 +18,7 @@ export default (state = initialState, action) => {
                 todos: state.todos.map( 
                     todo => todo.id === action.payload ?
                         { ...todo, completed: !todo.completed } : 
-                        todo
+                        { ...todo }
                 )
             }
         case ADD_TODO:

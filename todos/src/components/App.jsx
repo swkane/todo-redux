@@ -41,14 +41,6 @@ class App extends Component {
     this.setState({text: event.target.value});
   }
 
-  // checking a todo as complete
-  // handleComplete = index => () => this.setState({
-  //   todos: this.state.todos.map((todo, i) => index === i ? {
-  //     ...todo,
-  //     completed: !todo.completed
-  //   } : todo)
-  // });
-
   // deleting a todo
   handleDelete = index => () => this.setState({
     todos: this.state.todos.filter((todo, i) => index !== i)
@@ -69,7 +61,7 @@ class App extends Component {
           {/* <!-- This section should be hidden by default and shown when there are todos --> */}
 			  <section className="main">
           <Switch>
-            <Route exact path="/" render={() => <TodoList filter="all" todos={this.state.todos} onDelete={this.handleDelete} /*onCompleted={this.handleComplete}*/ />} />
+            <Route exact path="/" render={() => <TodoList filter="all" onDelete={this.handleDelete} /*onCompleted={this.handleComplete}*/ />} />
             <Route exact path="/active" render={() => <TodoList filter="active" todos={this.state.todos.filter(todo => !todo.completed)} onDelete={this.handleDelete} /*onCompleted={this.handleComplete}*/ />} />
             <Route exact path="/completed" render={() => <TodoList filter="complete" todos={this.state.todos.filter( todo => todo.completed)} onDelete={this.handleDelete} /*onCompleted={this.handleComplete}*/ />} />
           </Switch>

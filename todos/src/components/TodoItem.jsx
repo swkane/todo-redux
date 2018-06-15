@@ -6,7 +6,7 @@ import { withRouter } from 'react-router';
 
 class TodoItem extends React.Component {
     onComplete = () => {
-        this.props.dispatch(markComplete(this.props.index));
+        this.props.dispatch(markComplete(this.props.id));
     }
     render() {
         const { completed, onDelete, text } = this.props;
