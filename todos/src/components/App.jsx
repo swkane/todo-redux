@@ -56,7 +56,7 @@ class App extends Component {
       <section className="todoapp">
         <header className="header">
           <h1>todos</h1>
-          <input onChange={this.handleChange}  onKeyUp={this.handleEnter} className="new-todo" value={this.state.text} autoFocus />
+          <input onChange={this.handleChange} onKeyUp={this.handleEnter} className="new-todo" value={this.state.text} autoFocus />
 			  </header>
           {/* <!-- This section should be hidden by default and shown when there are todos --> */}
 			  <section className="main">

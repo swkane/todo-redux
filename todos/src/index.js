@@ -15,7 +15,7 @@ const store = createStore(
 
 const Index = () => (
     <Provider store={store} >
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.NODE_ENV === "production" ? "/todos-part-1" : "/"}>
             <App />
         </BrowserRouter>
     </Provider>
